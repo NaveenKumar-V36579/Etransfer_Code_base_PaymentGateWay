@@ -1,0 +1,1296 @@
+﻿@font-face {
+  font-family: 'ProximaNovaThin';
+  src: url('../fonts/Proxima_Nova_Thin.ttf');
+}
+
+@font-face {
+  font-family: 'ProximaNovaLight';
+  src: url('../fonts/Proxima_Nova_Light.ttf');
+}
+
+@font-face {
+  font-family: 'ProximaNovaRegular';
+  src: url('../fonts/Proxima_Nova_Regular.ttf');
+}
+
+@font-face {
+  font-family: 'ProximaNovaSemiBold';
+  src: url('../fonts/Proxima_Nova_Semi_Bold.ttf');
+}
+
+@font-face {
+  font-family: 'ProximaNovaBold';
+  src: url('../fonts/Proxima_Nova_Bold.ttf');
+}
+
+@font-face {
+  font-family: 'ProximaNovaExtraBold';
+  src: url('../fonts/Proxima_Nova_Extra_Bold.ttf');
+}
+
+@font-face {
+  font-family: 'ProximaNovaThinItalic';
+  src: url('../fonts/Proxima_Nova_Thin_Italic.ttf');
+}
+
+@font-face {
+  font-family: 'ProximaNovaLightItalic';
+  src: url('../fonts/Proxima_Nova_Light_Italic.ttf');
+}
+
+@font-face {
+  font-family: 'ProximaNovaRegularItalic';
+  src: url('../fonts/Proxima_Nova_Regular_Italic.ttf');
+}
+
+@font-face {
+  font-family: 'ProximaNovaBoldItalic';
+  src: url('../fonts/Proxima_Nova_Bold_Italic.ttf');
+}
+
+/*===Root Styles===*/
+:root {
+  --primaryColor: #00a7e1;
+  --primaryColorTransparent: rgba(0, 167, 225, 0.5);
+  --background: #ffffff;
+  --text: #3b3b3b;
+  --text-disabled: rgba(23, 23, 23, 0.5);
+  --secondary-background: #f5f5f5;
+  --tertiary-background: rgba(197, 197, 197, 0.5);
+  --accent: #ff9800;
+  --accent-alt: #ff9800;
+  --text-xs: 11px;
+  --text-sm: 12px;
+  --text-ls: 14.5px;
+  --text-md: 17px;
+  --text-lm: 19.5px;
+  --text-lg: 22px;
+  --text-xl: 24px;
+  --text-xxl: 36px;
+  --text-xxxl: 42px;
+  --text-hero: 60px;
+  --success: #7fee04;
+  --success-dark: #8bc34a;
+  --danger: #f44336;
+  --danger-background: #ffcac6;
+  --shadow: #888888;
+  --hero-background: #00000080;
+}
+
+:root[theme='dark'] {
+  --accent: #d88100;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'ProximaNovaRegular';
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--text);
+  margin: 5px;
+  font-family: 'ProximaNovaThin';
+}
+
+.genericText {
+  color: var(--text);
+}
+
+.secondaryBackground {
+  display: flex;
+  background-color: var(--secondary-background);
+}
+
+.invisible {
+  display: none;
+}
+
+.brCompat {
+  height: 10px;
+}
+
+/*===Button===*/
+.button {
+  display: inline-block;
+  margin-bottom: 0;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  white-space: nowrap;
+  padding: 6px 12px;
+  text-transform: uppercase;
+  font-family: 'ProximaNovaBold';
+  font-size: var(--text-lm);
+  border: 0;
+  transition-duration: 0.5s;
+  border-radius: 3px;
+}
+
+.button:hover {
+  transition-duration: 0.5s;
+  box-shadow: 0 0 10px var(--shadow);
+}
+
+.buttonOrange {
+  border: 2px solid transparent;
+  transition-duration: 0.5s;
+  background-color: var(--accent);
+  color: white;
+  min-width: 200px;
+  height: 55px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttonOrange:hover {
+  transition-duration: 0.5s;
+  background-color: var(--accent-alt);
+  box-shadow: 0 0 5px var(--shadow);
+}
+
+.buttonOrange:disabled {
+  background-color: var(--tertiary-background);
+}
+
+.buttonBig {
+  font-size: var(--text-lg);
+  padding: 10px 15px;
+  margin-top: 40px;
+}
+
+/*===Progress Bar===*/
+.progress-bar {
+  background-color: var(--primaryColor);
+}
+
+.progressStep {
+  width: 20%;
+  text-align: center;
+  font-size: var(--text-sm);
+  font-family: 'ProximaNovaSemiBold';
+  text-transform: uppercase;
+  color: var(--primaryColor);
+}
+
+.striped-progress {
+  background-image: linear-gradient(
+    45deg,
+    rgb(255, 255, 255, 0.5) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.5) 50%,
+    rgba(255, 255, 255, 0.5) 75%,
+    transparent 75%,
+    transparent
+  );
+  animation-direction: reverse;
+}
+
+.progressBarContainer {
+  height: 10px;
+  background-color: var(--tertiary-background);
+}
+
+.progressBarFinished {
+  background-color: var(--primaryColor);
+}
+
+/*===Header Styles===*/
+
+.headerStyle {
+  border-bottom: 3px solid var(--primaryColor);
+  background-color: var(--background);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  height: 65px;
+}
+
+a:hover {
+  text-decoration: none;
+  color: var(--primaryColor);
+}
+
+.logo {
+  height: 50px;
+  margin: 0 15px;
+}
+
+.navigationItemsContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+}
+
+.switchPadding {
+  margin: 0 5px 0 10px;
+}
+
+.navigationItem {
+  color: var(--primaryColor);
+  font-size: var(--text-xl);
+  font-family: 'ProximaNovaLight';
+  cursor: pointer;
+  margin: 0 15px;
+  display: flex;
+  align-items: center;
+}
+
+.navigationItemWrapper {
+  height: 30px;
+}
+
+.badgeStyle {
+  width: 20px;
+  height: 20px;
+  background-color: var(--primaryColor);
+  border-radius: 50%;
+  color: white;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  font-size: var(--text-sm);
+  margin: 2px;
+  font-family: 'ProximaNovaSemiBold';
+}
+
+@media (max-width: 765px) {
+  .navigationItem {
+    font-size: var(--text-md);
+  }
+}
+
+@media (max-width: 480px) {
+  .navigationItem {
+    font-size: var(--text-ls);
+    margin: 0 3px;
+    height: 30px;
+  }
+}
+
+/*===Page Styles===*/
+.page {
+  color: var(--text);
+  background-color: var(--background);
+}
+
+/*===Content Styles===*/
+.content {
+  max-width: 1200px;
+  margin: 65px auto 0 auto;
+  min-height: 75vh;
+}
+
+/*===Footer Styles===*/
+.footerContainer {
+  background-color: var(--secondary-background);
+  margin: 0 auto;
+  font-size: var(--text-sm);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-top: 2px solid transparent;
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.footerLinksContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1.5rem 0;
+  max-width: 1200px;
+}
+
+.link,
+.link2 {
+  font-family: 'ProximaNovaBold';
+  font-size: var(--text-ls);
+  color: var(--text);
+  cursor: pointer;
+  margin: 0 10px;
+  transition-duration: 0.5s;
+}
+
+.link2 {
+  color: var(--primaryColor);
+}
+
+@media (max-width: 640px) {
+  .footerLinksContainer {
+    flex-direction: column;
+  }
+}
+
+.legalContainer {
+  max-width: 1200px;
+}
+
+.legal {
+  font-size: var(--text-sm);
+}
+
+.copyright {
+  font-size: var(--text-ls);
+  color: var(--text);
+  vertical-align: middle;
+  margin: unset;
+}
+
+/*===Action Bar===*/
+.actionBar {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--secondary-background);
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.actionBarTextContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.actionBarText {
+  font-size: var(--text-lg);
+  font-family: 'ProximaNovaRegular';
+  vertical-align: bottom;
+  text-align: end;
+}
+
+.actionBarAmount {
+  font-family: 'ProximaNovaBold';
+  color: var(--text);
+}
+
+.actionBarNavButtonContainer {
+  display: flex;
+  margin-top: 10px;
+  justify-content: flex-end;
+  margin-right: 10px;
+}
+
+/*===Landing Page===*/
+.tagline {
+  color: var(--primaryColor);
+  font-family: 'ProximaNovaThin';
+  font-size: var(--text-hero);
+  text-align: center;
+}
+
+.description {
+  font-family: 'ProximaNovaRegular';
+  text-align: center;
+  font-size: var(--text-lg);
+  color: var(--text);
+}
+
+/*===Listing Item===*/
+.productListItem {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  max-width: 990px;
+  width: 100%;
+}
+
+.listHeader {
+  font-size: var(--text-sm);
+  font-family: 'ProximaNovaLight';
+  color: var(--text);
+}
+
+.amountTextWhite {
+  color: white;
+  font-family: 'ProximaNovaSemiBold';
+}
+
+.listItem {
+  display: flex;
+  align-items: center;
+}
+
+.subItem {
+  width: 14.286%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media (max-width: 640px) {
+  .productListItem {
+    flex-wrap: wrap;
+  }
+
+  .subItem {
+    width: 50%;
+    margin-top: 10px;
+  }
+}
+
+.productIconSmall {
+  height: 25px;
+  margin-right: 3px;
+}
+
+/* ===Input Switch=== */
+input.switch {
+  position: relative;
+  appearance: none;
+  -webkit-appearance: none;
+  outline: none;
+  width: 50px;
+  height: 30px;
+  background-color: #ffffff;
+  border: 1px solid #d9dadc;
+  border-radius: 50px;
+  box-shadow: inset -20px 0 0 0 var(--secondary-background);
+  transition-duration: 250ms;
+  vertical-align: middle;
+}
+
+input.switch:after {
+  content: '';
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  width: 26px;
+  height: 26px;
+  background-color: transparent;
+  border-radius: 50%;
+  box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2);
+  vertical-align: middle;
+}
+
+input.switch:checked {
+  border-color: #4ed164;
+  box-shadow: inset 20px 0 0 0 #4ed164;
+}
+
+input.switch:checked:after {
+  left: 20px;
+  box-shadow: -2px 4px 3px rgba(0, 0, 0, 0.05);
+}
+
+/**===Input Text===*/
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 500px;
+}
+
+.inputLabel {
+  font-family: 'ProximaNovaRegular';
+  font-size: var(--text-sm);
+  color: var(--primaryColor);
+  line-height: 15px;
+}
+
+.requiredText {
+  font-size: var(--text-lg);
+  vertical-align: middle;
+  color: var(--danger);
+}
+
+.errorMessage {
+  font-family: 'ProximaNovaBold';
+  font-size: var(--text-sm);
+  vertical-align: middle;
+  color: var(--danger);
+}
+
+.errorMessageContainer,
+.ghostErrorMessageContainer {
+  transition-duration: 1s;
+  padding: 3px;
+  opacity: 1;
+  height: 25px;
+}
+
+.ghostErrorMessageContainer {
+  opacity: 0;
+  transition-duration: 1s;
+}
+
+input {
+  border-top: none;
+  border-right: none;
+  border-bottom: 3px solid var(--primaryColor);
+  border-left: none;
+  font-family: 'ProximaNovaRegular';
+  font-size: var(--text-md);
+  width: 100%;
+  max-width: 500px;
+  color: var(--text);
+  background-color: var(--background);
+  padding: 0.375rem 0.75rem;
+}
+
+input:focus {
+  outline: none;
+}
+
+.inputContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.addonFunctionContainer {
+  height: 30px;
+  width: 30px;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--primaryColor);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition-duration: 0.5s;
+  box-shadow: 0 0 3px var(--shadow);
+  z-index: 1;
+}
+
+.addonFunctionContainer:hover {
+  transition-duration: 0.5s;
+  box-shadow: 0 0 10px var(--shadow);
+}
+
+.addonFunction {
+  color: white;
+  font-family: 'ProximaNovaSemiBold';
+  font-size: var(--text-lg);
+}
+
+/*===Input Select===*/
+.inputSelectContainer {
+  border-bottom: 3px solid var(--primaryColor);
+  width: 100%;
+  max-width: 500px;
+  margin-bottom: 25px;
+}
+
+select {
+  border-top: none;
+  border-right: none;
+  border-bottom: none;
+  border-left: none;
+  font-family: 'ProximaNovaRegular';
+  font-size: var(--text-md);
+  width: 100%;
+  max-width: 500px;
+  color: var(--text);
+  background-color: var(--background);
+}
+
+select:focus {
+  outline: none;
+}
+
+.react-select__control {
+  border: none !important;
+  font-family: 'ProximaNovaRegular';
+  font-size: var(--text-md);
+  width: 100%;
+  max-width: 500px;
+  color: var(--text);
+  background-color: var(--background);
+}
+
+.react-select__control--is-focused {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.react-select__menu {
+  z-index: 30;
+}
+
+.react-select__menu-list {
+  z-index: 30;
+}
+
+/*===Forms===*/
+.formCenter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 15px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  width: 100%;
+}
+
+.inputExpirationDate {
+  display: flex;
+  flex-direction: row;
+}
+
+.rowElements {
+  margin: 10px;
+  max-width: 230px;
+  width: 100%;
+}
+
+.customFormRow {
+  display: flex;
+  flex-direction: column;
+}
+
+/*===Date Picker===*/
+/*===These styles override the original react-datepicker css===*/
+.react-datepicker-wrapper {
+  display: flex;
+  max-width: 450px;
+  width: 100%;
+  border-bottom: 3px solid var(--primaryColor) !important;
+}
+
+.react-datepicker__input-container {
+  display: flex;
+  max-width: 450px;
+  width: 100%;
+}
+
+.react-datepicker-ignore-onclickoutside,
+.form-control,
+.react-datepicker-ignore-onclickoutside:focus,
+.form-control:focus {
+  border-top: none;
+  border-right: none;
+  border-bottom: none;
+  border-left: none;
+  font-family: 'ProximaNovaRegular' !important;
+  font-size: var(--text-md) !important;
+  outline: none !important;
+  color: var(--text);
+  background-color: var(--background);
+}
+
+.react-datepicker {
+  background-color: var(--background) !important;
+  box-shadow: 0 0 10px var(--shadow);
+}
+
+.react-datepicker__header {
+  background-color: var(--background) !important;
+}
+
+.react-datepicker__day,
+.react-datepicker__current-month,
+.react-datepicker__day-name {
+  font-family: 'ProximaNovaRegular' !important;
+  font-size: var(--text-md) !important;
+  color: var(--text) !important;
+}
+
+.react-datepicker__day:hover {
+  background-color: var(--primaryColorTransparent) !important;
+}
+
+.react-datepicker__day--disabled {
+  color: var(--text-disabled) !important;
+}
+
+.react-datepicker__day--selected {
+  background-color: var(--primaryColor) !important;
+}
+
+.inputDatePickerRow {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  max-width: 500px;
+  align-items: baseline;
+}
+
+/*===Input Checkbox===*/
+.checkboxItem {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  max-width: 500px;
+  align-items: center;
+  justify-content: center;
+}
+
+.checkboxLabel {
+  color: var(--text);
+  font-family: 'ProximaNovaRegular';
+  font-size: var(--text-md);
+}
+
+/*===Input Switch===*/
+.switchItem {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  max-width: 500px;
+  align-items: center;
+}
+
+.switchLabel {
+  width: 100%;
+  max-width: 440px;
+  color: var(--text);
+  font-family: 'ProximaNovaRegular';
+  font-size: var(--text-md);
+}
+
+@media (max-width: 500px) {
+  .switchLabel {
+    max-width: 85%;
+  }
+}
+
+/*===Payment Item===*/
+.itemCenter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 15px;
+}
+
+.amountHeaderStyle {
+  font-family: 'ProximaNovaSemiBold';
+}
+
+.paymentSubItem {
+  width: 25%;
+}
+
+@media (max-width: 640px) {
+  .paymentSubItem {
+    width: 50%;
+    margin-top: 10px;
+  }
+}
+
+/*===Card Styles===*/
+
+.card {
+  box-shadow: 0 0 5px var(--shadow);
+  max-width: 1024px;
+  width: 100%;
+  border: none;
+  margin: 0 auto;
+  background-color: var(--background);
+}
+
+.cardHeader {
+  background-color: var(--accent);
+  font-size: var(--text-lg);
+  color: white;
+}
+
+.cardSubtitle {
+  font-size: var(--text-ls);
+}
+
+.cardTable {
+  background-color: var(--secondary-background);
+}
+
+/*===Table Styles===*/
+
+.tableHeader {
+  font-family: 'ProximaNovaSemiBold';
+  text-align: center;
+}
+
+.tableCell {
+  text-align: center;
+  padding: 3px;
+}
+
+.tertiaryBackground {
+  background-color: var(--tertiary-background);
+}
+
+.marginHorizontal {
+  margin: 0 auto;
+}
+
+.tableHeading {
+  padding: 10px;
+  font-size: var(--text-sm);
+}
+
+.tdBefore {
+  font-family: 'ProximaNovaSemiBold';
+  font-size: var(--text-sm);
+}
+
+/*===Landing Page===*/
+
+.heroPrimary {
+  color: var(--primaryColor);
+  font-family: 'ProximaNovaThin';
+  font-size: var(--text-hero);
+}
+
+.heroSecondry {
+  color: var(--primaryColor);
+  font-family: 'ProximaNovaThin';
+  font-size: var(--text-xxxl);
+}
+
+.landingPageContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero {
+  position: relative;
+  color: white;
+}
+
+.heroImage {
+  background-image: url('../img/landing-hero.jpg');
+  height: 33.33vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.heroImageOverlay {
+  position: absolute;
+  top: 45%;
+  left: 33.33%;
+  transform: translate(-45%, -40%);
+  padding: 15px;
+  background: var(--hero-background);
+}
+
+@media (max-width: 765px) {
+  .heroImage {
+    background-image: url('../img/landing-hero-sm.jpg');
+    height: 65vh;
+  }
+
+  .heroImageOverlay {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: fit-content;
+  }
+}
+
+.heroText {
+  color: white;
+  font-family: 'ProximaNovaThin';
+  font-size: var(--text-xxl);
+}
+
+.heroSubText {
+  color: white;
+  font-family: 'ProximaNovaThin';
+  font-size: var(--text-lg);
+}
+
+.landingNavContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.landingButton {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  max-width: 350px;
+}
+
+/*===Product Card===*/
+.productContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.productCard,
+.selectedProductCard {
+  width: 350px;
+  height: 250px;
+  margin: 10px;
+  box-shadow: 0 0 5px var(--shadow);
+  border-radius: 3px;
+  transition-duration: 0.5s;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background-color: var(--primaryColorTransparent);
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.productCard:hover {
+  transition-duration: 0.5s;
+  box-shadow: 0 0 10px var(--shadow);
+}
+
+.selectedProductCard {
+  box-shadow: 0 0 15px var(--shadow);
+  background-color: var(--primaryColor);
+  color: white;
+}
+
+.productHeader {
+  display: flex;
+  flex-direction: row;
+  height: 75px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.productHeading {
+  display: flex;
+  flex-direction: row;
+  vertical-align: middle;
+  align-items: center;
+}
+
+.productImageContainer {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  vertical-align: middle;
+}
+
+.productImage {
+  height: 50px;
+  padding: 5px;
+}
+
+.productCheckboxContainer,
+.selectedProductCheckboxContainer,
+.selectedProductCheckboxContainer2 {
+  height: 35px;
+  width: 35px;
+  background-color: var(--secondary-background);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition-duration: 0.5s;
+  border: 1px solid #000000;
+}
+
+.productCheckbox,
+.selectedProductCheckbox,
+.selectedProductCheckbox2 {
+  height: 25px;
+  width: 25px;
+  filter: opacity(0);
+  opacity: 0;
+  transition-duration: 0.5s;
+}
+
+.selectedProductCheckbox {
+  filter: opacity(1);
+  opacity: 1;
+}
+
+.selectedProductCheckboxContainer2 {
+  background-color: var(--primaryColor);
+}
+
+.selectedProductCheckbox2 {
+  filter: brightness(0) saturate(100%) invert(100%);
+  opacity: 1;
+}
+
+.productTitle,
+.selectedProductTitle {
+  display: block;
+  transition-duration: 0.5s;
+  font-family: 'ProximaNovaSemiBold';
+  font-size: var(--text-xl);
+  color: var(--text);
+}
+
+.selectedProductTitle {
+  color: white;
+}
+
+.productDescription {
+  font-family: 'ProximaNovaLight';
+  font-size: var(--text-md);
+}
+
+.productPolicyNumber {
+  font-family: 'ProximaNovaSemiBold';
+}
+
+.productPaymentInfo {
+  font-family: 'ProximaNovaLight';
+  font-size: var(--text-lg);
+  position: absolute;
+  bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 640px) {
+  .productPaymentInfo {
+    font-size: var(--text-md);
+  }
+}
+
+.productAmount {
+  transition-duration: 0.5s;
+  color: var(--text);
+  font-family: 'ProximaNovaSemiBold';
+}
+
+.selectedAmount {
+  transition-duration: 0.5s;
+  color: white;
+  font-family: 'ProximaNovaSemiBold';
+}
+
+.removeButton {
+  color: white;
+  background-color: var(--danger);
+  transition-duration: 0.5s;
+  border: 2px solid transparent;
+  border-radius: 3px;
+  padding: 3px 5px;
+}
+
+.removeButton:hover {
+  transition-duration: 0.5s;
+  box-shadow: 0 0 10px var(--shadow);
+}
+
+.tncContainer {
+  width: 100%;
+  height: 150px;
+  max-width: 1024px;
+  background-color: var(--tertiary-background);
+  padding: 5px;
+  margin: 5px;
+  font-family: 'ProximaNovaRegular';
+  font-size: var(--text-sm);
+  color: var(--text);
+  overflow: scroll;
+}
+
+.thankYouPage {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 15% 10px 15% 10px;
+}
+
+.reviewPageHeadingContainer {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  justify-content: space-between;
+  align-items: center;
+}
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  opacity: 0;
+  margin: 0;
+}
+
+.disabledButton {
+  pointer-events: none;
+  background-color: var(--tertiary-background);
+}
+
+.spinnerContainer {
+  display: flex;
+  width: 100%;
+  height: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.authContainer{
+  display: flex;
+  flex-direction: column;
+  box-shadow: 10px 10px 10px 5px #d9d9d9;
+  border-radius: 5px;
+  border: 0.5px;
+  border-color: #d9d9d9;
+  border-width: 1px;
+  border-style: solid;
+  margin-top: 40px;
+  margin-bottom: 50px;
+  padding-top: 35px;
+}
+
+.authTitle {
+  margin-left: 15px;
+  margin-right: 15px;
+  color: #707070;
+  font-family: "ProximaNovaSemiBold";
+  font-size: var(--text-md);
+}
+
+.authText {
+  color: #707070;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-top: 15px;
+  font-family: "ProximaNovaRegular";
+  font-size: var(--text-ls);
+}
+
+.authKepyPoint {
+  color: #707070;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-top: 2.5px;
+  font-family: "ProximaNovaRegular";
+  font-size: var(--text-ls);
+}
+
+.checkBoxParent {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-bottom: 35px;
+}
+
+.authCheckBox {
+  width: 30px;
+  block-size: 30px;
+  margin-right: 20px;
+}
+
+.labelCheckBox {
+  color: #707070;
+  font-size: var(--text-ls);
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.authInput{
+  width: 250px;
+  font-family: 'ProximaNovaSemiBold';
+  font-size: var(--text-md);
+}
+
+.authInputParent{
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-bottom: 20px;
+}
+
+.cancelButton {
+  border-radius: 5px;
+  border: 0.5px;
+  border-color: #00a7e1;
+  border-width: 1px;
+  border-style: solid;
+  width: 150px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #00a7e1;
+  font-family: "ProximaNovaSemiBold";
+  font-size: var(--text-md);
+}
+
+.cancelButton:hover {
+  transition-duration: 0.5s;
+  box-shadow: 0 0 10px #00a7e1;
+  padding: 12px 40px;
+  user-select: none;
+}
+
+.submitButtonDisabled {
+  background-color: #d9d9d9;
+  color: #707070;
+  width: 150px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  border: 0.5px;
+  font-family: "ProximaNovaSemiBold";
+  font-size: var(--text-md);
+}
+
+.submitButtonActive {
+  background-color: #ff9800;
+  color: #ffffff;
+  width: 150px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  border: 0.5px;
+  font-family: "ProximaNovaSemiBold";
+  font-size: var(--text-md);
+}
+
+.submitButtonActive:hover {
+  transition-duration: 0.5s;
+  box-shadow: 0 0 10px #ff9800;
+  user-select: none;
+}
+
+.buttonContainer {
+  display: flex;
+  flex-direction: column;
+  margin:20px;
+  margin-top: 0px !important;
+}
+
+@media (max-width: 640px) {
+  .authCheckBox {
+    width: 45px;
+    block-size: 45px;
+  }
+
+  .buttonContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 50px;
+  }
+}
